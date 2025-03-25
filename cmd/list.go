@@ -10,13 +10,20 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func PrintTodos(todos []Todo) {
+	for i, v := range todos {
+		fmt.Printf("%d. %s - %v\n", i+1, v.Task, v.Done)
+	}
+}
+
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Show the TODO list.",
 	Long:  `Show the full TODO list.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("list called")
+		todos := loadTodos()
+		PrintTodos(todos)
 	},
 }
 
