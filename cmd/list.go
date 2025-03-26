@@ -5,16 +5,8 @@ Copyright © 2025 Adithya <aadhii.yz@gmail.com>
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
-
-func PrintTodos(todos []Todo) {
-	for i, v := range todos {
-		fmt.Printf("%d. %s - %v\n", i+1, v.Task, v.Done)
-	}
-}
 
 // listCmd represents the list command
 var listCmd = &cobra.Command{
